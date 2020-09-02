@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LibraryDataAccess.Interfaces;
+using LibraryDataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,20 @@ namespace LibraryAPI.Controllers
         public ActionResult Get()
         {
             return Ok(_bookRepository.GetAllBooks());
+        }
+
+        [HttpPost]
+        public ActionResult Add(Book book)
+        {
+            _bookRepository.AddBook(book);
+            return Ok("created");
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult Edit(int id, Book book)
+        {
+            _bookRepository.EditBook(id, book);
+            return Ok();
         }
     }
 }

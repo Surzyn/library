@@ -29,7 +29,7 @@ namespace LibraryAPI
         {
             services.AddControllers();
 
-            services.Add(new ServiceDescriptor(typeof(IBookRepository), new MockBookRepository()));
+            services.Add(new ServiceDescriptor(typeof(IBookRepository), new BookRepository()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

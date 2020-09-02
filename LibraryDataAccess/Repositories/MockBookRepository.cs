@@ -8,6 +8,16 @@ namespace LibraryDataAccess.Repositories
 {
     public class MockBookRepository : IBookRepository
     {
+        public void AddBook(Book newBook)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditBook(int id, Book book)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Book> GetAllBooks()
         {
             return new List<Book>()
